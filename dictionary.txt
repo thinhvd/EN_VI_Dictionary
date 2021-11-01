@@ -1,0 +1,10 @@
+hello	Xin chào
+happy	Hạnh phúc
+apple	Quả táo
+monkey	Con khỉ
+elephant	Con voi
+cow	Con bò
+coconut	Quả dừa
+house	Ngôi nhà
+habit	Thói quen
+hell	Địa ngục
