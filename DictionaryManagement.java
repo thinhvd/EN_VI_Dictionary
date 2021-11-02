@@ -54,7 +54,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFileAdvanced() {
-        File a = new File("D:\\BTL_Dictionary\\src\\data.dict");
+        File a = new File("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict");
         try {
             Scanner sc = new Scanner(a);
             String target;
@@ -110,7 +110,7 @@ public class DictionaryManagement {
 
     public void addWordAdvanced(String target, String explain) {
         try {
-            FileWriter file = new FileWriter("D:\\BTL_Dictionary\\src\\data.dict", true);
+            FileWriter file = new FileWriter("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict", true);
             file.flush();
             file.write("\n@" + target + '\n');
             file.write(explain + '\n');
@@ -131,12 +131,12 @@ public class DictionaryManagement {
 
     public void deleteWordAdvanced(String target) {
         try {
-            File f1 = new File("D:\\BTL_Dictionary\\src\\data.dict");
+            File f1 = new File("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict");
             Scanner sc = new Scanner(f1);
             String temp = '@' + target;
             while (sc.hasNextLine()) {
                 line = sc.nextLine();
-                if (line.length() > target.length() && line.substring(0, target.length() + 1).equals(temp)) {
+                if (line.length() > target.length() && line.substring(0, target.length() + 1).equals(temp) && line.substring(target.length() + 1, target.length() + 3).equals(" /")) {
                     line = line.replace(line.substring(1), "?");
                 }
                 lines.add(line);
