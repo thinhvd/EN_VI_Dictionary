@@ -1,3 +1,5 @@
+package EN_VI_Dictionary;
+
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -57,15 +59,20 @@ public class DictionaryManagement {
         File a = new File("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict");
         try {
             Scanner sc = new Scanner(a);
-            String target;
-            String explain;
+            String target = null;
+            String explain = null;
             while (sc.hasNextLine()) {
                 String temp = "bala";
                 String firstLine = sc.nextLine();
                 int pos = firstLine.indexOf('/'); // xac dinh vi tri phan phat am
-                if (pos > 0) target = firstLine.substring(1, pos - 1); // bo phan phat am va dau @
-                else target = firstLine.substring(1);
-                explain = "/" + firstLine.substring(pos + 1);
+                if (pos > 0) {
+                    target = firstLine.substring(1, pos - 1); // bo phan phat am va dau @
+                    explain = firstLine.substring(pos);
+                }
+                else {
+                    target = firstLine.substring(1);
+                    explain = "";
+                }
                 while (Character.compare(temp.charAt(0), '@') != 0) { // dau @ o dau moi tu
                     temp = sc.nextLine();
                     if (temp.equals("")) break;
@@ -136,7 +143,10 @@ public class DictionaryManagement {
             String temp = '@' + target;
             while (sc.hasNextLine()) {
                 line = sc.nextLine();
-                if (line.length() > target.length() && line.substring(0, target.length() + 1).equals(temp) && line.substring(target.length() + 1, target.length() + 3).equals(" /")) {
+                if (line.length() == target.length() + 1 && line.substring(0, target.length() + 1).equals(temp)) {
+                    line = line.replace(line.substring(1), "?");
+                } else if (line.length() > target.length() && line.substring(0, target.length() + 1).equals(temp)
+                        && line.substring(target.length() + 1, target.length() + 3).equals(" /")) {
                     line = line.replace(line.substring(1), "?");
                 }
                 lines.add(line);
