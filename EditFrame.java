@@ -131,8 +131,8 @@ public class EditFrame extends javax.swing.JFrame {
     private void btnApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyActionPerformed
         // TODO add your handling code here:
         DictionaryApplication dicApp = new DictionaryApplication();
-        String oldWord = txtOldTarget.getText();
-        String newWord = txtNewTarget.getText();
+        String oldWord = txtOldTarget.getText().toLowerCase();
+        String newWord = txtNewTarget.getText().toLowerCase();
         String newExplain = txtNewExplain.getText();
         if(oldWord.equals("") || newWord.equals("") || newExplain.equals("")){
             JOptionPane.showMessageDialog(null, "Bạn cần phải nhập đủ dữ liệu","Lỗi !",JOptionPane.OK_OPTION);
