@@ -120,7 +120,7 @@ public class AddFrame extends javax.swing.JFrame {
     private void btnApplyAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyAddActionPerformed
         // TODO add your handling code here:
         DictionaryApplication dicApp = new DictionaryApplication();
-        String newTarget = txtTarget.getText();
+        String newTarget = txtTarget.getText().toLowerCase();
         String newExplain = txtExplain.getText();
         if(txtTarget.getText().equals("")||txtExplain.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Bạn cần phải nhập đủ dữ liệu","Lỗi !",JOptionPane.OK_OPTION);

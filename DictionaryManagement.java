@@ -54,7 +54,7 @@ public class DictionaryManagement {
     }
 
     public void insertFromFileAdvanced() {
-        File a = new File("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict");
+        File a = new File("D:\\BTL_Dictionary\\src\\data.dict");
         try {
             Scanner sc = new Scanner(a);
             String target;
@@ -110,7 +110,7 @@ public class DictionaryManagement {
 
     public void addWordAdvanced(String target, String explain) {
         try {
-            FileWriter file = new FileWriter("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict", true);
+            FileWriter file = new FileWriter("D:\\BTL_Dictionary\\src\\data.dict", true);
             file.flush();
             file.write("\n@" + target + '\n');
             file.write(explain + '\n');
@@ -131,7 +131,7 @@ public class DictionaryManagement {
 
     public void deleteWordAdvanced(String target) {
         try {
-            File f1 = new File("F://codejava//DictionaryFinalVersion//src//EN_VI_Dictionary//data.dict");
+            File f1 = new File("D:\\BTL_Dictionary\\src\\data.dict");
             Scanner sc = new Scanner(f1);
             String temp = '@' + target;
             while (sc.hasNextLine()) {

@@ -117,7 +117,7 @@ public class DeleteFrame extends javax.swing.JFrame {
     private void btnApplyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnApplyActionPerformed
         // TODO add your handling code here:
         DictionaryApplication dicApp = new DictionaryApplication();
-        String delWord = txtDelete.getText();
+        String delWord = txtDelete.getText().toLowerCase();
         if(txtDelete.getText().equals("")){
             JOptionPane.showMessageDialog(null, "Bạn cần phải nhập đủ dữ liệu","Lỗi !",JOptionPane.OK_OPTION);
         }
@@ -125,11 +125,10 @@ public class DeleteFrame extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, delWord + " không tồn tại !", "Lỗi !", JOptionPane.INFORMATION_MESSAGE);
         }
         else {
-            String dWord = txtDelete.getText();
-            dicApp.dictCMD.dictM.map.remove(dWord);
-            dicApp.Wlist.removeElement(dWord);
-            dicApp.dictCMD.dictM.dic.deleteWord(dWord);
-            dicApp.dictCMD.dictM.deleteWordAdvanced(dWord);
+            dicApp.dictCMD.dictM.map.remove(delWord);
+            dicApp.Wlist.removeElement(delWord);
+            dicApp.dictCMD.dictM.dic.deleteWord(delWord);
+            dicApp.dictCMD.dictM.deleteWordAdvanced(delWord);
             JOptionPane.showMessageDialog(null,"Từ đã được xóa khỏi từ điển !","Thành công !", WIDTH);
             this.dispose();
             dicApp.setVisible(true);

@@ -172,7 +172,7 @@ public class DictionaryApplication extends javax.swing.JFrame {
 
     private void txtSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSearchKeyPressed
         // TODO add your handling code here:
-        String search = txtSearch.getText();
+        String search = txtSearch.getText().toLowerCase();
         DefaultListModel<String> model = new DefaultListModel<>();
         dictCMD.dictM.map.keySet().forEach((String key) -> {
             int check = key.indexOf(search);
